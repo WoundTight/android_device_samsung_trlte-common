@@ -291,8 +291,6 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/libWVphoneAPI.so
-vendor/lib/libwvdrm_L1.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # Graphics
@@ -361,7 +359,7 @@ lib/hw/sensorhubs.apq8084.so
 
 # Time services
 bin/time_daemon
--app/TimeService/TimeService.apk
+-app/TimeService.apk
 lib/libcommon_time_client.so
 vendor/lib/libTimeService.so
 -vendor/lib/libtime_genoff.so
