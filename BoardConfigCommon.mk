@@ -24,8 +24,7 @@ TARGET_CPU_VARIANT := krait
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 BOARD_USES_ES705 := true
 
 # Bluetooth
@@ -115,16 +114,23 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
-include device/qcom/sepolicy/sepolicy.mk
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/trlte-common
 
 # SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += \
     device/samsung/trlte-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-	device.te \
-	file.te \
+    bluetooth.te \
+    device.te \
+    file.te \
     file_contexts \
+    genfs_contexts \
+    kernel.te \
+    lcd_dev.te \
     macloader.te \
     mediaserver.te \
     mdm_helper.te \
@@ -133,8 +139,11 @@ BOARD_SEPOLICY_UNION += \
     platform_app.te \
     rild.te \
     system_app.te \
+    system_server.te \
     time_daemon.te \
+    ueventd.te \
     wpa.te \
+    vibe_dev.te \
     vold.te
 
 # Time
