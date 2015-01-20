@@ -5,7 +5,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     ro.qc.sdk.audio.fluencetype=fluence \
     use.voice.path.for.pcm.voip=false \
-    use.dedicated.device.for.voip=true
+    use.dedicated.device.for.voip=true \
+    audio.offload.buffer.size.kb=32 \
+    av.offload.enable=true \
+    av.streaming.offload.enable=true \
+    audio.offload.multiple.enabled=false \
+    audio.offload.gapless.enabled=true \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=true
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -26,11 +33,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=true \
     persist.radio.add_power_save=1 \
-    persist.radio.lte_vrat_report=1 \
-    persist.radio.mode_pref_nv10=1 
+    persist.radio.lte_vrat_report=1
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sensors=1 \
-    ro.ril.telephony.mqanelements=6 \
-    ro.telephony.ril_class=trlteRIL
+    debug.sensors=1
